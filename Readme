@@ -1,0 +1,15 @@
+Skeeter is an Arduino based syth box that plays pre-programmed arpeggios or sequences. 
+The sounds are created by the Mozzi synth library which you will need to download and install. 
+You'll also need to install the MIDI.h library so the synth can accept external MIDI input to change the root note.
+
+Skeeter Synth - Arpeggio Box
+      by Janis Wilson Hughes aka Jupertronic aka vitalWho aka J Dub
+      MIDI input to control root note of arpeggio on the fly
+      Sync output for Korg Volca, Pocket Operator, etc
+      Drone Glitch latching button for jamming
+      Blinking light on last note of arpeggio
+      Originally built on Arduino Nano
+      Inspired by:
+      -Mosquito I - by Tim D... analog.sketchbook.101@gmail.com
+      -Audiuno with MIDI mods by Dave at Notes and Volts - https://www.notesandvolts.com/2015/05/auduino-synth-midi.html
+
