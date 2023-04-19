@@ -1,19 +1,38 @@
 Skeeter is an Arduino based syth box that plays pre-programmed arpeggios or sequences. 
+
+I plan to make a completely redesigned version of this, but I'm providing this info as is for those interested. 
+I haven't worked on this for over a year since this most recent repo update, so I probably can't help you 
+troubleshoot too much. I hope it works! Do a sanity check on all the schematic connections and pin definitions in the code
+and let me know if something looks totally off. 
+
 The sounds are created by the Mozzi synth library which you will need to download and install. 
 You'll also need to install the MIDI.h library so the synth can accept external MIDI input to change the root note.
-Toggle through the arpeggio sequences using the up and down momentary normally open buttons.
-Latch on to a drone note sequence with the latching button. This button is lighed. Light comes on when latched.
+Switch between pre-programmed arpeggio sequences using the up and down momentary normally open buttons.
+Latch on to a drone note sequence with the latching button. This button is lighted. Light comes on when latched.
 This is a great feature for jamming - twirl the LFO and phase on the drone, then jump into a sequence.
 Light also blinks on last note of sequence when unlatched for timing que to change sequences.
-You can change sequences while the drone button is latched. 
+You can change sequences while the drone button is latched.
 Arpeggio sequence will start at the first note in the sequence when drone is unlatched.
 5 Potentiometers control arpeggio rate, note length or legato, phase, low pass filter, and note pitch. 
-A default root note is programmed in so the box will play when no MIDI is hooked up. 
+Custom potentiometer scale is included for pitch pot. This pot shifts the MIDI output pitch so that you can run a bass synth with Skeeter. 
+Straight up or noon is the default root. Turn to right to increase 1 step at a time, left to decrease. I recommend using 0 +7, +12, -5, -12. 
+A default root note is programmed in so the box will play when no MIDI is hooked up. When you run MIDI in, the root note of the sequences
+will be changed to the input note.
+The toggle switch selects whether the MIDI output is the whole sequence or just a drone.
 There is a sync out jack for use with a drum machine like Korg Volca or Pocket Operator. Timing can get a little weird if you 
 make drastic adjustments to the legato setting while playing due to the way the Mozzi is coded here. Very useful though.
 
+Notes:
+MIDI input circuit is not detailed in the circuit schematic. See the separate diagram for that.
+This thing is kinda glitchy.
+This build uses 2 Arduino Nano boards. Run a common ground between the 2. For things that need power (pots, MIDI jacks, OLED) only power them
+from the board they're connected to.
+The button with the built in LED is a PITA to wire. I suggest using a voltmeter to figure out your pin outs on your button and test it on a breadboard.
+I just got mine from Amazon, and it took some tinkering to figure out the wiring. 
+
+
 Skeeter Synth - Arpeggio Box
-      by Janis Wilson Hughes aka Jupertronic aka vitalWho aka J Dub
+      by Janis Wilson Hughes aka Jupertronic aka vitalWho aka J Dub aka Abound Sound
       MIDI input to control root note of arpeggio on the fly
       Sync output for Korg Volca, Pocket Operator, etc
       Drone Glitch latching button for jamming
